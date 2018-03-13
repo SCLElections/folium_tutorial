@@ -11775,46 +11775,45 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-Tutorial:-Quickly-Make-Beautiful-Interactive-Maps">Python Tutorial: Quickly Make Beautiful Interactive Maps<a class="anchor-link" href="#Python-Tutorial:-Quickly-Make-Beautiful-Interactive-Maps">&#182;</a></h1><p><strong>Make beatiful interactive maps with minimal knowledge of python.</strong></p>
+<h1 id="Python-Tutorial:-Quickly-Make-Beautiful-Interactive-Maps">Python Tutorial: Quickly Make Beautiful Interactive Maps<a class="anchor-link" href="#Python-Tutorial:-Quickly-Make-Beautiful-Interactive-Maps">&#182;</a></h1><p>by Dr. Eyal Kazin, Senior Data Scientist, London, UK</p>
 <p>Nothing impresses a client or a colleague more than seeing their data on a meaningful plot. Even more so when it's on an intuitive map. Make it interactive, and they are likely to come back for more.    With the tools provided here you will be able to quickly create an interactive map that will leave an impression.</p>
-<p>All you need to do is install the latest version of <a href="https://github.com/python-visualization/folium">Folium</a>, a package that makes it easy to visualize data that has been manipulated in Python on an interactive map using the JavaScript <a href="http://leafletjs.com/"><code>leaflet.js</code></a> libraries.<br>
-(The API used here is assuming version <code>0.5.0</code>.)</p>
-<p>This is the first part of a series of posts:</p>
+<p>All you need to do is install the latest version of <a href="https://github.com/python-visualization/folium">Folium</a>, a Python package that makes it easy to visualize data on an interactive map using the JavaScript <a href="http://leafletjs.com/">leaflet.js</a> library.</p>
+<p>This is the first of a three part series:</p>
 <ul>
-<li><strong>Part 1: The Basics</strong><ul>
-<li>Creating a Map object</li>
+<li><strong>Part 1: The Basics</strong>  <ul>
+<li>Creating a <code>Map</code> Object</li>
 <li>Saving to HTML  </li>
 <li>Location and Zoom</li>
-<li>Tiles</li>
+<li>Map Tiles</li>
 <li>Layer Control</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><strong>Part 2: Zoom In</strong><ul>
-<li>Marker groups</li>
-<li>Marker clusters (markers that group when you zoom out)</li>
-<li>Customising marker icons (image and text)</li>
+<li>Marker Groups</li>
+<li>Marker Clusters  </li>
+<li>Customising Markers</li>
 <li>Circles</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><strong>Part 3: Zoom Out</strong><ul>
-<li>Heatmaps: static or changing with time</li>
+<li>Heatmaps: static or with temporal variation</li>
 <li>Choropleths  </li>
-<li>Customisation beyond the API  </li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong>Part 4: Summary</strong><ul>
-<li>A practical cheat sheet for reference</li>
+<li>Customisation:  Beyond the Folium API</li>
+<li>Summary: Putting it all together</li>
 </ul>
 </li>
 </ul>
 <p><strong>Disclaimer</strong><br>
-He we discuss only a handful of features which we use frequently. The reader is encouraged to use the module help pages to explore the full potential and updates in the API.</p>
+We discuss a handful of features which we use frequently. The reader is encouraged to use the module help pages to explore the full potential and updates in the API.<br>
+(The Folium API used here assumes version <code>0.5.0</code>.)</p>
+<p><strong> Credits </strong><br>
+Maps used are provided by © OpenStreetMap contributors.<br>
+Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL</p>
+<p>This tutorial can be followed here or in <a href="https://nbviewer.jupyter.org/github/SCLElections/folium_tutorial/blob/master/notebooks/beautiful_interactive_maps_part1.ipynb">nbviewer</a>. All code is also avilable on <a href="https://github.com/SCLElections/folium_tutorial">Github</a>.</p>
 
 </div>
 </div>
@@ -11865,7 +11864,7 @@ He we discuss only a handful of features which we use frequently. The reader is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">map_</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">control_scale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>   
@@ -11883,12 +11882,12 @@ He we discuss only a handful of features which we use frequently. The reader is 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfYzcwOTUxZTBjZGQ0NDc3MjkzMDNmYWI1ZDVhMTRlNmIgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwX2M3MDk1MWUwY2RkNDQ3NzI5MzAzZmFiNWQ1YTE0ZTZiIiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF9jNzA5NTFlMGNkZDQ0NzcyOTMwM2ZhYjVkNWExNGU2YiA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF9jNzA5NTFlMGNkZDQ0NzcyOTMwM2ZhYjVkNWExNGU2YicsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbMCwwXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHpvb206IDEsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF9jNzA5NTFlMGNkZDQ0NzcyOTMwM2ZhYjVkNWExNGU2Yik7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfNzNjYWFiYThiOTBhNGNjM2FhOTdiM2YzOGVlZThjYjkgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgImF0dHJpYnV0aW9uIjogbnVsbCwgCiAgImRldGVjdFJldGluYSI6IGZhbHNlLCAKICAibWF4Wm9vbSI6IDE4LCAKICAibWluWm9vbSI6IDEsIAogICJub1dyYXAiOiBmYWxzZSwgCiAgInN1YmRvbWFpbnMiOiAiYWJjIgp9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF9jNzA5NTFlMGNkZDQ0NzcyOTMwM2ZhYjVkNWExNGU2Yik7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfMDNiNmUxYzdhOTI1NDZhYWJhZDkwYmE5ZGRlYjVlZDEgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzAzYjZlMWM3YTkyNTQ2YWFiYWQ5MGJhOWRkZWI1ZWQxIiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF8wM2I2ZTFjN2E5MjU0NmFhYmFkOTBiYTlkZGViNWVkMSA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF8wM2I2ZTFjN2E5MjU0NmFhYmFkOTBiYTlkZGViNWVkMScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbMCwwXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHpvb206IDEsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF8wM2I2ZTFjN2E5MjU0NmFhYmFkOTBiYTlkZGViNWVkMSk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfZGZlMzMzZTIzODViNGQ3Mjg0MDEyMzQyMWQ2ZDc4ZDEgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgImF0dHJpYnV0aW9uIjogbnVsbCwgCiAgImRldGVjdFJldGluYSI6IGZhbHNlLCAKICAibWF4Wm9vbSI6IDE4LCAKICAibWluWm9vbSI6IDEsIAogICJub1dyYXAiOiBmYWxzZSwgCiAgInN1YmRvbWFpbnMiOiAiYWJjIgp9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF8wM2I2ZTFjN2E5MjU0NmFhYmFkOTBiYTlkZGViNWVkMSk7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 </div>
 
 </div>
@@ -11901,32 +11900,28 @@ He we discuss only a handful of features which we use frequently. The reader is 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: The optional <code>control_scale=True</code> triggers the scale legend on the bottom left.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Basic Trouble Shooting</strong></p>
-<p>Note that if you ever get a blank image it might be due to at least one of the following:</p>
+<p>Notes:</p>
 <ul>
-<li>In the case of Jupyter notebook: verify that your Nbextensions <strong><em>Limit Output</em></strong> option is not limiting how much you can display.<br>
-  E.g, if your settings is limited to 10000 characters you might get an error message simliar to: 
-<pre><code>  limit_output extension: Maximum message size of 10000 exceeded with 20000 characters</code></pre>
-</li>
-<li>Some attributes passed are corrupt (this is relevant for when passing text, e.g, when passing names to the objects)  </li>
+<li>The optional <code>control_scale=True</code> triggers the scale legend on the bottom left.  </li>
+<li>Use your mouse wheel or the buttons on the top left to zoom in and out.  </li>
 </ul>
-<h2 id="Saving-to-HTML">Saving to HTML<a class="anchor-link" href="#Saving-to-HTML">&#182;</a></h2><p>Alternatively you might want to save the map to a HTML file. Use the <code>save</code> module like this.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Saving to HTML</strong></p>
+<p>Alternatively you might want to save the map to an HTML file. Use the <code>save</code> module like this.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">map_</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_map.html&#39;</span><span class="p">)</span>
@@ -11941,7 +11936,30 @@ He we discuss only a handful of features which we use frequently. The reader is 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>On the top left corer of the map you will be able to zoom in and out. Next we will use the API to determine the starting point.</p>
+<p><strong>Basic Trouble Shooting</strong></p>
+<p>Note that if you get a blank image it might be due to at least one of the following:</p>
+<ul>
+<li>In the case of blank image in a Jupyter notebook (but getting map in HTML):<br>
+Verify that your Nbextensions <strong><em>Limit Output</em></strong> option is not limiting how much you can display.<br>
+  E.g, if your settings is limited to 10000 characters you might get an error message simliar to: 
+<pre><code>  limit_output extension: Maximum message size of 10000 exceeded with 20000 characters</code></pre>
+</li>
+<li><p>In the case of a blank image in both Jupyter and HTML, and/or missing layers:<br>
+Some attributes passed might be corrupt (this is relevant for when passing text, e.g, when passing names to the objects)</p>
+</li>
+<li><p>In the case where the map is dispalying but a particular object/layer is not, verify that you passed the correct argument type.<br>
+E.g, the Folium API can be inconsistent reguarding the type of geo points as tuples or lists.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next we will use the API to determine the starting map extent.</p>
 
 </div>
 </div>
@@ -11951,17 +11969,17 @@ He we discuss only a handful of features which we use frequently. The reader is 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Location,-Location,-Location-(and-Zoom)">Location, Location, Location (and Zoom)<a class="anchor-link" href="#Location,-Location,-Location-(and-Zoom)">&#182;</a></h2><p>The <code>Map</code> object takes keywords <code>location</code> (as in (latitude, longitude) tuple or list) and <code>zoom_start</code>.<br>
-In the first map above we used the default highest zoom level (<code>zoom_start=1</code>), where below we use the at fine granular level of <code>18</code>.</p>
+In the first map above we used the default highest zoom level (<code>zoom_start=1</code>), where in the following we use the at a fine granular level of <code>18</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">center_latitude</span><span class="p">,</span> <span class="n">center_longitude</span> <span class="o">=</span> <span class="mf">40.729183</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.994263</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">center_latitude</span><span class="p">,</span> <span class="n">center_longitude</span> <span class="o">=</span> <span class="mf">40.729183</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.994263</span> <span class="c1"># New York, NY, USA. Around Washington Square Park</span>
 <span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_latitude</span><span class="p">,</span> <span class="n">center_longitude</span><span class="p">)</span>
 <span class="n">zoom_start</span> <span class="o">=</span> <span class="mi">18</span>
 
@@ -11979,12 +11997,12 @@ In the first map above we used the default highest zoom level (<code>zoom_start=
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfOWFhN2QwOTMyNjE4NDE2NGJhOTAyNjRkZTg2OWU1ZmUgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzlhYTdkMDkzMjYxODQxNjRiYTkwMjY0ZGU4NjllNWZlIiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF85YWE3ZDA5MzI2MTg0MTY0YmE5MDI2NGRlODY5ZTVmZSA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF85YWE3ZDA5MzI2MTg0MTY0YmE5MDI2NGRlODY5ZTVmZScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbNDAuNzI5MTgzLC03My45OTQyNjNdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgem9vbTogMTgsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF85YWE3ZDA5MzI2MTg0MTY0YmE5MDI2NGRlODY5ZTVmZSk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfYzkwMzYzNjliZDJkNDZjNmFhYzNmZmVjMGRiM2ViZDggPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgImF0dHJpYnV0aW9uIjogbnVsbCwgCiAgImRldGVjdFJldGluYSI6IGZhbHNlLCAKICAibWF4Wm9vbSI6IDE4LCAKICAibWluWm9vbSI6IDEsIAogICJub1dyYXAiOiBmYWxzZSwgCiAgInN1YmRvbWFpbnMiOiAiYWJjIgp9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF85YWE3ZDA5MzI2MTg0MTY0YmE5MDI2NGRlODY5ZTVmZSk7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfZjMxY2I2N2Q0OTliNDAyY2IyNmI2NGQ1NGRkMTc0ODkgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwX2YzMWNiNjdkNDk5YjQwMmNiMjZiNjRkNTRkZDE3NDg5IiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF9mMzFjYjY3ZDQ5OWI0MDJjYjI2YjY0ZDU0ZGQxNzQ4OSA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF9mMzFjYjY3ZDQ5OWI0MDJjYjI2YjY0ZDU0ZGQxNzQ4OScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbNDAuNzI5MTgzLC03My45OTQyNjNdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgem9vbTogMTgsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF9mMzFjYjY3ZDQ5OWI0MDJjYjI2YjY0ZDU0ZGQxNzQ4OSk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfMDFmZDlkODRlMWJjNDNhYmI2NzE1YzFkZjBkOTNkYWUgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgImF0dHJpYnV0aW9uIjogbnVsbCwgCiAgImRldGVjdFJldGluYSI6IGZhbHNlLCAKICAibWF4Wm9vbSI6IDE4LCAKICAibWluWm9vbSI6IDEsIAogICJub1dyYXAiOiBmYWxzZSwgCiAgInN1YmRvbWFpbnMiOiAiYWJjIgp9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF9mMzFjYjY3ZDQ5OWI0MDJjYjI2YjY0ZDU0ZGQxNzQ4OSk7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 </div>
 
 </div>
@@ -12006,25 +12024,25 @@ In the first map above we used the default highest zoom level (<code>zoom_start=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tiles">Tiles<a class="anchor-link" href="#Tiles">&#182;</a></h2><p><code>folium</code> uses a OpenStreetMap tiling as its default, but you are free to choose others.</p>
-<p>Below we demonstrate using an alterative one called <code>positron</code> by <a href="https://carto.com/">CartoDB</a>, which is quite elegent when zooming out (they also have one called <code>dark_matter</code>!).</p>
-<p>We also demonstrate that you can provide your user with a few tile options, which they can choose via the <code>LayerControl</code>.<br>
-The alternative chosen here is call <code>Terrain</code> by <a href="http://maps.stamen.com/">Stamen</a>.</p>
-<p>After creating the map toggle between the tiles using the button in the Layer Control.</p>
+<h2 id="Map-Tiles">Map Tiles<a class="anchor-link" href="#Map-Tiles">&#182;</a></h2><p>Folium uses map tiles from <a href="https://www.openstreetmap.org">OpenStreetMap</a> as its default, but you are free to choose others.</p>
+<p>Below we demonstrate using an alterative tiling called <code>positron</code> by <a href="https://carto.com/">CartoDB</a>, which is quite elegant  (they also have one called <code>dark_matter</code>!).</p>
+<p>We also demonstrate an interactive <code>LayerControl</code> feature, which allows users to select a tiling from a few options, as well as layers.<br>
+The alternative tiles chosen here is call <code>Terrain</code> by <a href="http://maps.stamen.com/">Stamen</a> and we add to the <code>Map</code> object via the <code>add_tile_layer</code> method.</p>
+<p>After creating the map toggle between the tiles using the radio buttons in the Layer Control.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tiles</span> <span class="o">=</span> <span class="s1">&#39;CartoDB positron&#39;</span> <span class="c1"># Notation: &#39;[Source] [Tile]&#39; (see table below for more examples)</span>
-<span class="n">zoom_start</span> <span class="o">=</span> <span class="mi">14</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">zoom_start</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">map_</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="n">zoom_start</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">control_scale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="c1"># ===== Minimum required to use your own tile =====</span>
-<span class="n">map_</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="n">zoom_start</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">control_scale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">tiles</span> <span class="o">=</span> <span class="s1">&#39;CartoDB positron&#39;</span> <span class="c1"># Notation: &#39;[Source] [Tile]&#39; (see table below for more examples)</span>
 <span class="n">tiles_name</span> <span class="o">=</span> <span class="s1">&#39;CartoDB positron tiles&#39;</span>
 <span class="n">map_</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">tiles</span><span class="o">=</span><span class="n">tiles</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">tiles_name</span><span class="p">)</span>
 
@@ -12033,7 +12051,9 @@ The alternative chosen here is call <code>Terrain</code> by <a href="http://maps
 <span class="n">more_tiles_name</span> <span class="o">=</span> <span class="s1">&#39;Stamen Terrain tiles&#39;</span> <span class="c1"># your choice of name for Layer Control (optional)</span>
 <span class="n">map_</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">tiles</span><span class="o">=</span><span class="n">more_tiles</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">more_tiles_name</span><span class="p">)</span>
 
-<span class="n">map_</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s1">&#39;topleft&#39;</span><span class="p">,</span> <span class="n">collapsed</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span> <span class="c1"># adding Layer Control (optional)</span>
+<span class="c1"># ===== Layer Control ======</span>
+<span class="n">layer_control</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s1">&#39;topleft&#39;</span><span class="p">,</span> <span class="n">collapsed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">map_</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">layer_control</span><span class="p">)</span> <span class="c1"># adding Layer Control (optional). Alternatively: layer_control.add_to.(map_)</span>
 
 <span class="n">map_</span>
 </pre></div>
@@ -12048,12 +12068,12 @@ The alternative chosen here is call <code>Terrain</code> by <a href="http://maps
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfNDQ5NTJkNTJkODQ4NDk5ZDk1ZjllODkwZDA1MTE4MDYgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzQ0OTUyZDUyZDg0ODQ5OWQ5NWY5ZTg5MGQwNTExODA2IiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF80NDk1MmQ1MmQ4NDg0OTlkOTVmOWU4OTBkMDUxMTgwNiA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF80NDk1MmQ1MmQ4NDg0OTlkOTVmOWU4OTBkMDUxMTgwNicsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbNDAuNzI5MTgzLC03My45OTQyNjNdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgem9vbTogMTQsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF80NDk1MmQ1MmQ4NDg0OTlkOTVmOWU4OTBkMDUxMTgwNik7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfNjUxNGVlY2JkZTMzNDg1ZDllOTJmZGE2ZDY2MzUwZGUgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL2NhcnRvZGItYmFzZW1hcHMte3N9Lmdsb2JhbC5zc2wuZmFzdGx5Lm5ldC9saWdodF9hbGwve3p9L3t4fS97eX0ucG5nJywKICAgICAgICAgICAgICAgIHsKICAiYXR0cmlidXRpb24iOiBudWxsLCAKICAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsIAogICJtYXhab29tIjogMTgsIAogICJtaW5ab29tIjogMSwgCiAgIm5vV3JhcCI6IGZhbHNlLCAKICAic3ViZG9tYWlucyI6ICJhYmMiCn0KICAgICAgICAgICAgICAgICkuYWRkVG8obWFwXzQ0OTUyZDUyZDg0ODQ5OWQ5NWY5ZTg5MGQwNTExODA2KTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgdGlsZV9sYXllcl83ZjUyOTc2N2QxMDk0NzA4ODU5YjNjZTcwZWFlYTQ2NiA9IEwudGlsZUxheWVyKAogICAgICAgICAgICAgICAgJ2h0dHBzOi8vc3RhbWVuLXRpbGVzLXtzfS5hLnNzbC5mYXN0bHkubmV0L3RlcnJhaW4ve3p9L3t4fS97eX0uanBnJywKICAgICAgICAgICAgICAgIHsKICAiYXR0cmlidXRpb24iOiBudWxsLCAKICAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsIAogICJtYXhab29tIjogMTgsIAogICJtaW5ab29tIjogMSwgCiAgIm5vV3JhcCI6IGZhbHNlLCAKICAic3ViZG9tYWlucyI6ICJhYmMiCn0KICAgICAgICAgICAgICAgICkuYWRkVG8obWFwXzQ0OTUyZDUyZDg0ODQ5OWQ5NWY5ZTg5MGQwNTExODA2KTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgbGF5ZXJfY29udHJvbF9iNGFkYzg0ZjU1NzY0ZTJiYjk3YWQyMmJmMjFkNmU5MiA9IHsKICAgICAgICAgICAgICAgIGJhc2VfbGF5ZXJzIDogeyAiQ2FydG9EQiBwb3NpdHJvbiB0aWxlcyIgOiB0aWxlX2xheWVyXzY1MTRlZWNiZGUzMzQ4NWQ5ZTkyZmRhNmQ2NjM1MGRlLCJTdGFtZW4gVGVycmFpbiB0aWxlcyIgOiB0aWxlX2xheWVyXzdmNTI5NzY3ZDEwOTQ3MDg4NTliM2NlNzBlYWVhNDY2LCB9LAogICAgICAgICAgICAgICAgb3ZlcmxheXMgOiB7ICB9CiAgICAgICAgICAgICAgICB9OwogICAgICAgICAgICBMLmNvbnRyb2wubGF5ZXJzKAogICAgICAgICAgICAgICAgbGF5ZXJfY29udHJvbF9iNGFkYzg0ZjU1NzY0ZTJiYjk3YWQyMmJmMjFkNmU5Mi5iYXNlX2xheWVycywKICAgICAgICAgICAgICAgIGxheWVyX2NvbnRyb2xfYjRhZGM4NGY1NTc2NGUyYmI5N2FkMjJiZjIxZDZlOTIub3ZlcmxheXMsCiAgICAgICAgICAgICAgICB7cG9zaXRpb246ICd0b3BsZWZ0JywKICAgICAgICAgICAgICAgICBjb2xsYXBzZWQ6IGZhbHNlLAogICAgICAgICAgICAgICAgIGF1dG9aSW5kZXg6IHRydWUKICAgICAgICAgICAgICAgIH0pLmFkZFRvKG1hcF80NDk1MmQ1MmQ4NDg0OTlkOTVmOWU4OTBkMDUxMTgwNik7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfNjFjMDVhMmI0NzAzNDYyMWI3MTZlOGNkYWU0ZmU5MDkgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzYxYzA1YTJiNDcwMzQ2MjFiNzE2ZThjZGFlNGZlOTA5IiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF82MWMwNWEyYjQ3MDM0NjIxYjcxNmU4Y2RhZTRmZTkwOSA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF82MWMwNWEyYjQ3MDM0NjIxYjcxNmU4Y2RhZTRmZTkwOScsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbNDAuNzI5MTgzLC03My45OTQyNjNdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgem9vbTogMTQsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF82MWMwNWEyYjQ3MDM0NjIxYjcxNmU4Y2RhZTRmZTkwOSk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfNTdlOWQ3MDIzMzNmNDIwNTk0OWNmYzJlMTkzN2RkMjcgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL2NhcnRvZGItYmFzZW1hcHMte3N9Lmdsb2JhbC5zc2wuZmFzdGx5Lm5ldC9saWdodF9hbGwve3p9L3t4fS97eX0ucG5nJywKICAgICAgICAgICAgICAgIHsKICAiYXR0cmlidXRpb24iOiBudWxsLCAKICAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsIAogICJtYXhab29tIjogMTgsIAogICJtaW5ab29tIjogMSwgCiAgIm5vV3JhcCI6IGZhbHNlLCAKICAic3ViZG9tYWlucyI6ICJhYmMiCn0KICAgICAgICAgICAgICAgICkuYWRkVG8obWFwXzYxYzA1YTJiNDcwMzQ2MjFiNzE2ZThjZGFlNGZlOTA5KTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgdGlsZV9sYXllcl81NzMxMmRlNWM0ODg0NzIwYTUyOWQ0Yjk3MjUwOWU5NyA9IEwudGlsZUxheWVyKAogICAgICAgICAgICAgICAgJ2h0dHBzOi8vc3RhbWVuLXRpbGVzLXtzfS5hLnNzbC5mYXN0bHkubmV0L3RlcnJhaW4ve3p9L3t4fS97eX0uanBnJywKICAgICAgICAgICAgICAgIHsKICAiYXR0cmlidXRpb24iOiBudWxsLCAKICAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsIAogICJtYXhab29tIjogMTgsIAogICJtaW5ab29tIjogMSwgCiAgIm5vV3JhcCI6IGZhbHNlLCAKICAic3ViZG9tYWlucyI6ICJhYmMiCn0KICAgICAgICAgICAgICAgICkuYWRkVG8obWFwXzYxYzA1YTJiNDcwMzQ2MjFiNzE2ZThjZGFlNGZlOTA5KTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgbGF5ZXJfY29udHJvbF8wYjhjNDA1YzgzMDY0ZGQ0ODI2ODg4MWQ2YjAzNGJkNiA9IHsKICAgICAgICAgICAgICAgIGJhc2VfbGF5ZXJzIDogeyAiQ2FydG9EQiBwb3NpdHJvbiB0aWxlcyIgOiB0aWxlX2xheWVyXzU3ZTlkNzAyMzMzZjQyMDU5NDljZmMyZTE5MzdkZDI3LCJTdGFtZW4gVGVycmFpbiB0aWxlcyIgOiB0aWxlX2xheWVyXzU3MzEyZGU1YzQ4ODQ3MjBhNTI5ZDRiOTcyNTA5ZTk3LCB9LAogICAgICAgICAgICAgICAgb3ZlcmxheXMgOiB7ICB9CiAgICAgICAgICAgICAgICB9OwogICAgICAgICAgICBMLmNvbnRyb2wubGF5ZXJzKAogICAgICAgICAgICAgICAgbGF5ZXJfY29udHJvbF8wYjhjNDA1YzgzMDY0ZGQ0ODI2ODg4MWQ2YjAzNGJkNi5iYXNlX2xheWVycywKICAgICAgICAgICAgICAgIGxheWVyX2NvbnRyb2xfMGI4YzQwNWM4MzA2NGRkNDgyNjg4ODFkNmIwMzRiZDYub3ZlcmxheXMsCiAgICAgICAgICAgICAgICB7cG9zaXRpb246ICd0b3BsZWZ0JywKICAgICAgICAgICAgICAgICBjb2xsYXBzZWQ6IGZhbHNlLAogICAgICAgICAgICAgICAgIGF1dG9aSW5kZXg6IHRydWUKICAgICAgICAgICAgICAgIH0pLmFkZFRvKG1hcF82MWMwNWEyYjQ3MDM0NjIxYjcxNmU4Y2RhZTRmZTkwOSk7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 </div>
 
 </div>
@@ -12066,10 +12086,18 @@ The alternative chosen here is call <code>Terrain</code> by <a href="http://maps
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that the first three lines could have been written in one:<br>
+<p>Note:</p>
+<ul>
+<li>The <code>LayerControl</code> feature appears on the top left. Try toggling between the tile options.   </li>
+<li><p>In theory, one could start up the folium map with a simple one-liner as below:<br>
 <code>map_ = folium.Map(location=location, zoom_start=zoom_start, tiles=tiles, control_scale=True)</code>,<br>
-but Folium currently does not let you pass the name to the layer.</p>
-<p>All freely available tiles:</p>
+however the API currently does not let you pass a <code>name</code> to the tile layer when using this approach.</p>
+</li>
+<li><p><code>tiles</code> notation: '[Source] [Tiles]', e.g <code>'CartoDB positron'</code>. (See table below for more examples.)</p>
+</li>
+</ul>
+<p><strong>Free Tiles</strong></p>
+<p>Some freely available tiles:</p>
 <table>
 <thead><tr>
 <th>Source</th>
@@ -12095,22 +12123,24 @@ but Folium currently does not let you pass the name to the layer.</p>
 </tr>
 </tbody>
 </table>
-<p>Others include Mapbox and Cloudmade, both which require an API key for full access (keyword <code>API_key</code>). Mapbox has two freemiums with limited zooming: <code>Bright</code>, <code>Control Room</code>.</p>
-<p>Alternatively you can pass a custom tileset to <code>folium</code>. This requires a Leaflet-style URL to <code>tiles</code> that has the format <code>http://{s}.yourtiles.com/{z}/{x}/{y}.png</code>.</p>
-<h3 id="Terms-of-Use">Terms of Use<a class="anchor-link" href="#Terms-of-Use">&#182;</a></h3><p>Distribution of maps created, of course, depends on your usage.<br>
+<p>Alternatively you can pass a custom tileset. This requires a Leaflet-style URL to <code>tiles</code> that has the format <code>http://{s}.yourtiles.com/{z}/{x}/{y}.png</code>.</p>
+<p><strong> Tiles Terms of Use  </strong><br>
+Distribution of maps created, of course, depends on your usage.<br>
 This is our understanding:</p>
 <ul>
 <li><strong>OpenStreetMap</strong> - their <a href="https://www.openstreetmap.org/copyright">license</a> indicates that you can freely use it for commercial purposes, as long as you credit it: © OpenStreetMap contributor  (<a href="https://opendatacommons.org/licenses/odbl/1.0/">source: license page</a>)  </li>
-<li><strong>Stamen Design</strong> - their <a href="http://maps.stamen.com/#toner/12/37.7706/-122.3782">main page</a> and refers to <a href="https://creativecommons.org/licenses/by/3.0/">creativecommons.org license</a> stating that   <ul>
+<li><strong>Stamen Design</strong> - their <a href="http://maps.stamen.com/#toner/12/37.7706/-122.3782">main page</a> refers to <a href="https://creativecommons.org/licenses/by/3.0/">creativecommons.org license</a> stating that one should cite:   <ul>
 <li>For Toner and Terrain: Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL  </li>
 <li>For Watercolor: Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA    </li>
 </ul>
 </li>
-<li><a href="https://drive.google.com/file/d/0B3OBExqwT6KJamRCcUhrWHJUQzQ/view"><strong>CARTO</strong> End User License Agreement</a> states:  <blockquote><p>If you are on a Free Plan, you may make personal use of CARTO, but you are prohibited from using CARTO for
-commercial purposes.</p>
-</blockquote>
-</li>
+<li><strong>CARTO</strong>'s <a href="https://drive.google.com/file/d/0B3OBExqwT6KJamRCcUhrWHJUQzQ/view">End User License Agreement</a> states:<br>
+  <em>If you are on a Free Plan, you may make personal use of CARTO, but you are prohibited from using CARTO for
+commercial purposes.</em>  </li>
 </ul>
+<p><strong>Payed Tiles</strong><br>
+Another source includes <a href="https://www.mapbox.com/">Mapbox</a> which requires an API key for full access (keyword <code>API_key</code>). It has two freemiums with limited zooming: <code>Bright</code>, <code>Control Room</code> (no API key required).<br>
+There is also mention of tiling by <a href="https://cloudmade.com/">Cloudmade</a>, which is <a href="https://wiki.openstreetmap.org/wiki/CloudMade">credited</a> with the creation and first hosting of Leaflet (but has since moved to Github). It's not clear if this payed API is still functional.</p>
 
 </div>
 </div>
@@ -12119,25 +12149,63 @@ commercial purposes.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Basics-Summary">Basics Summary<a class="anchor-link" href="#Basics-Summary">&#182;</a></h2><p>So far we have learned how to:</p>
+<h2 id="Map-Basics-Summary">Map Basics Summary<a class="anchor-link" href="#Map-Basics-Summary">&#182;</a></h2><p>So far we have learned how to:</p>
 <ul>
-<li>Initiate a map object </li>
+<li>Initiate a <code>Map</code> object </li>
 <li>Locate it </li>
 <li>Choose its tiles  </li>
 <li>Add a Layer Control</li>
-<li>Save in HTML format.  </li>
+<li>Display in a Jupyter notebook and save in HTML format.  </li>
 </ul>
-<p>This could be summed up in three or four lines:</p>
+<p>These could be summed up in three or four lines:</p>
 
-<pre><code>map_ = folium.Map(location=(40.729183, -73.994263), zoom_start=14, tiles='CartoDB positron', control_scale=True)
-map_.add_child(folium.LayerControl(position='topleft', collapsed=True))  
-# map_.add_tile_layer(tiles='Stamen Terrain', name='Stamen Terrain tiles') # optional
-map_.save('my_map.html')</code></pre>
-<p>In the subsequent posts you can learn how to add layers:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">map_</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mf">40.729183</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.994263</span><span class="p">),</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;Stamen Terrain&#39;</span><span class="p">,</span> <span class="n">control_scale</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">map_</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;CartoDB positron&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CartoDB positron tiles&#39;</span><span class="p">)</span> <span class="c1"># optional</span>
+<span class="n">map_</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s1">&#39;topleft&#39;</span><span class="p">,</span> <span class="n">collapsed</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>  <span class="c1"># adding Layer Control (optional).</span>
+<span class="c1"># map_.save(&#39;my_map.html&#39;) # (optional) </span>
+<span class="n">map_</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfY2Y0M2M4MTJkMWJmNGJmYWExOTExNTA1YWIxY2NmOTMgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwX2NmNDNjODEyZDFiZjRiZmFhMTkxMTUwNWFiMWNjZjkzIiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIGJvdW5kcyA9IG51bGw7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgdmFyIG1hcF9jZjQzYzgxMmQxYmY0YmZhYTE5MTE1MDVhYjFjY2Y5MyA9IEwubWFwKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21hcF9jZjQzYzgxMmQxYmY0YmZhYTE5MTE1MDVhYjFjY2Y5MycsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2VudGVyOiBbNDAuNzI5MTgzLC03My45OTQyNjNdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgem9vbTogMTQsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYXhCb3VuZHM6IGJvdW5kcywKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxheWVyczogW10sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIEwuY29udHJvbC5zY2FsZSgpLmFkZFRvKG1hcF9jZjQzYzgxMmQxYmY0YmZhYTE5MTE1MDVhYjFjY2Y5Myk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfOTM5YzY3YzI4OThhNGZjMmJmMGFmZjRjOTY2NWUyZTEgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3N0YW1lbi10aWxlcy17c30uYS5zc2wuZmFzdGx5Lm5ldC90ZXJyYWluL3t6fS97eH0ve3l9LmpwZycsCiAgICAgICAgICAgICAgICB7CiAgImF0dHJpYnV0aW9uIjogbnVsbCwgCiAgImRldGVjdFJldGluYSI6IGZhbHNlLCAKICAibWF4Wm9vbSI6IDE4LCAKICAibWluWm9vbSI6IDEsIAogICJub1dyYXAiOiBmYWxzZSwgCiAgInN1YmRvbWFpbnMiOiAiYWJjIgp9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF9jZjQzYzgxMmQxYmY0YmZhYTE5MTE1MDVhYjFjY2Y5Myk7CiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfN2I2M2MzMzU0ZWIwNDc0OWFkYzg3ZDY3N2Y4YWFkYTYgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL2NhcnRvZGItYmFzZW1hcHMte3N9Lmdsb2JhbC5zc2wuZmFzdGx5Lm5ldC9saWdodF9hbGwve3p9L3t4fS97eX0ucG5nJywKICAgICAgICAgICAgICAgIHsKICAiYXR0cmlidXRpb24iOiBudWxsLCAKICAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsIAogICJtYXhab29tIjogMTgsIAogICJtaW5ab29tIjogMSwgCiAgIm5vV3JhcCI6IGZhbHNlLCAKICAic3ViZG9tYWlucyI6ICJhYmMiCn0KICAgICAgICAgICAgICAgICkuYWRkVG8obWFwX2NmNDNjODEyZDFiZjRiZmFhMTkxMTUwNWFiMWNjZjkzKTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgbGF5ZXJfY29udHJvbF8xNzQwZjlhZTE0YTU0Njc4OTY4OTk5M2IzZmUzOGM1MiA9IHsKICAgICAgICAgICAgICAgIGJhc2VfbGF5ZXJzIDogeyAic3RhbWVudGVycmFpbiIgOiB0aWxlX2xheWVyXzkzOWM2N2MyODk4YTRmYzJiZjBhZmY0Yzk2NjVlMmUxLCJDYXJ0b0RCIHBvc2l0cm9uIHRpbGVzIiA6IHRpbGVfbGF5ZXJfN2I2M2MzMzU0ZWIwNDc0OWFkYzg3ZDY3N2Y4YWFkYTYsIH0sCiAgICAgICAgICAgICAgICBvdmVybGF5cyA6IHsgIH0KICAgICAgICAgICAgICAgIH07CiAgICAgICAgICAgIEwuY29udHJvbC5sYXllcnMoCiAgICAgICAgICAgICAgICBsYXllcl9jb250cm9sXzE3NDBmOWFlMTRhNTQ2Nzg5Njg5OTkzYjNmZTM4YzUyLmJhc2VfbGF5ZXJzLAogICAgICAgICAgICAgICAgbGF5ZXJfY29udHJvbF8xNzQwZjlhZTE0YTU0Njc4OTY4OTk5M2IzZmUzOGM1Mi5vdmVybGF5cywKICAgICAgICAgICAgICAgIHtwb3NpdGlvbjogJ3RvcGxlZnQnLAogICAgICAgICAgICAgICAgIGNvbGxhcHNlZDogdHJ1ZSwKICAgICAgICAgICAgICAgICBhdXRvWkluZGV4OiB0cnVlCiAgICAgICAgICAgICAgICB9KS5hZGRUbyhtYXBfY2Y0M2M4MTJkMWJmNGJmYWExOTExNTA1YWIxY2NmOTMpOwogICAgICAgIAo8L3NjcmlwdD4=" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the subsequent parts you can learn how to add layers:</p>
 <ul>
-<li>Part 2: Zoom In - Marker Groups and icon customisation.    </li>
-<li>Part 3: Zoom Out - Heatmaps, Choropleths and customising map elements  </li>
-<li>Part 4: Reference Page - a cheatsheet for quick reference.  </li>
+<li>Part 2: Zoom In - Marker Groups and Icon Customisation.    </li>
+<li>Part 3: Zoom Out - Heatmaps, Choropleths and customising <code>folium.Element</code>s to add to a <code>Map</code> object.     </li>
 </ul>
 
 </div>
